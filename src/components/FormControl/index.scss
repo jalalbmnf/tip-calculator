@@ -11,7 +11,6 @@
   }
 
   &__label {
-    color: var(--gray-color);
     font-size: 16px;
   }
 
@@ -47,6 +46,7 @@
       width: 90%;
       font-size: 20px;
       border: 0px;
+      text-align: right;
       font-weight: bolder;
       background-color: transparent;
       color: var(--dark-turquoise-color);

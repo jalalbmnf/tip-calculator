@@ -4,13 +4,24 @@ import "./index.scss";
 
 interface IProps {
   active?: boolean;
+  disabled?: boolean;
   className?: string;
+  onClick?: (e?: any) => void;
   children: ReactNode;
 }
 
-const Button: FC<IProps> = ({ active = false, children, className = "" }) => {
+const Button: FC<IProps> = ({
+  active = false,
+  disabled = false,
+  children,
+  className = "",
+  onClick,
+}) => {
   return (
-    <button className={`btn ${className} ${active ? "active" : ""}`}>
+    <button
+      {...{ onClick, disabled }}
+      className={`btn ${className} ${active ? "active" : ""}`}
+    >
       {children}
     </button>
   );

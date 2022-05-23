@@ -1,10 +1,18 @@
+import { FC } from "react";
 import { Button } from "../../../components";
+
 import "./index.scss";
 
-const Result = () => {
+interface IProps {
+  total: string;
+  tipAmount: string;
+  reset: () => void;
+}
+
+const Result: FC<IProps> = ({ total, tipAmount, reset }) => {
   const resultList = [
-    { title: "Tip Amount", value: 0 },
-    { title: "Total", value: 0 },
+    { title: "Tip Amount", value: tipAmount || 0 },
+    { title: "Total", value: total || 0 },
   ];
 
   return (
@@ -21,7 +29,13 @@ const Result = () => {
         ))}
       </div>
 
-      <Button className="result-btn">RESET</Button>
+      <Button
+        onClick={reset}
+        disabled={!total || !tipAmount}
+        className="result-btn"
+      >
+        RESET
+      </Button>
     </div>
   );
 };

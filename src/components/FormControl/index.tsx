@@ -1,4 +1,4 @@
-import { FC, forwardRef, HTMLAttributes, ReactElement, Ref } from "react";
+import { FC, forwardRef, HTMLAttributes, Ref } from "react";
 
 import { EFormControlType } from "../../ts/enums/formControl";
 
@@ -11,31 +11,33 @@ interface IProps extends HTMLAttributes<HTMLElement> {
   label?: string;
   prefix?: string;
   error?: string;
+  value?: any;
 }
 
 const FormControl: FC<IProps> = forwardRef(
   (
     {
       type = EFormControlType.TEXT,
-      placeholder = "",
+      placeholder = "0",
       className = "",
       label = "",
       prefix = "",
       error = "",
+      value,
       ...others
     },
     ref: Ref<HTMLInputElement | HTMLTextAreaElement | any>
   ) => {
-    const textarea: ReactElement<HTMLTextAreaElement> = (
+    const textarea = (
       <textarea
         {...{ type, placeholder, ref }}
         {...others}
         className="form-control__field-textarea"
       ></textarea>
     );
-    const input: ReactElement<HTMLInputElement> = (
+    const input = (
       <input
-        {...{ type, placeholder, ref }}
+        {...{ type, placeholder, ref, value }}
         {...others}
         className="form-control__field-input"
       />

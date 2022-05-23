@@ -9,6 +9,11 @@
   color: var(--white-color);
   background-color: var(--dark-turquoise-color);
 
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
   &.active {
     color: var(--dark-turquoise-color);
     background-color: var(--light-turquoise-color);
