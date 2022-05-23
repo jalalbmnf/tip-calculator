@@ -9,12 +9,52 @@
       gap: 30px;
       margin-top: 20px;
 
+      &-item,
       &-input {
         width: 29%;
       }
+    }
+  }
+}
 
-      &__item {
-        width: 32%;
+@media screen and (max-width: 1280px) {
+  .tip {
+    &-btn {
+      &__group {
+        &-item,
+        &-input {
+          width: 28%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .tip {
+    &-btn {
+      &__group {
+        gap: 12px;
+
+        &-item,
+        &-input {
+          width: 30%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tip {
+    &-btn {
+      &__group {
+        gap: 12px;
+
+        &-item,
+        &-input {
+          width: 30%;
+        }
       }
     }
   }

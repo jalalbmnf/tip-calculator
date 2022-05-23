@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import { Button, FormControl } from "../../../components";
+import { checkLetters } from "../../../utils/regex";
 
 import "./index.scss";
 
@@ -23,7 +24,7 @@ const Tip: FC<IProps> = ({ setTip, tip }) => {
         {tipList.map((tip: string) => (
           <Button
             onClick={() => handleSelectTip(tip)}
-            className="tip-btn-group__item"
+            className="tip-btn__group-item"
             key={tip}
           >
             {tip}
@@ -31,7 +32,7 @@ const Tip: FC<IProps> = ({ setTip, tip }) => {
         ))}
         <FormControl
           value={tip}
-          onChange={(e: any) => setTip(e.target.value)}
+          onChange={(e: any) => setTip(checkLetters(e.target.value))}
           className="tip-btn__group-input"
         />
       </div>

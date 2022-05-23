@@ -1,4 +1,7 @@
 .result {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
   padding: 50px;
   border-radius: 15px;
@@ -6,7 +9,6 @@
 
   &-btn {
     width: 100%;
-    margin-top: 120px;
     background-color: var(--turquoise-color);
   }
 
@@ -34,6 +36,15 @@
         font-weight: bolder;
         color: var(--light-turquoise-color);
       }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .result {
+    padding: 30px;
+    &-btn {
+      margin-top: 50px;
     }
   }
 }

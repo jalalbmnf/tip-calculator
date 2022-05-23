@@ -4,6 +4,7 @@ import Tip from "./Tip";
 import Result from "./Result";
 
 import { FormControl } from "../../components";
+import { checkLetters } from "../../utils/regex";
 import DollarIcon from "../../assets/icons/icon-dollar.svg";
 import PersonIcon from "../../assets/icons/icon-person.svg";
 
@@ -36,7 +37,7 @@ const App = () => {
       <div className="calculator-left">
         <FormControl
           value={bill}
-          onChange={(e: any) => setBill(e.target.value)}
+          onChange={(e: any) => setBill(checkLetters(e.target.value))}
           label="Bill"
           prefix={DollarIcon}
           error={`${!bill && !!people ? "Can't be zero" : ""}`}
@@ -44,7 +45,7 @@ const App = () => {
         <Tip {...{ setTip, tip }} />
         <FormControl
           value={people}
-          onChange={(e: any) => setPeople(e.target.value)}
+          onChange={(e: any) => setPeople(checkLetters(e.target.value))}
           label="Number of people"
           prefix={PersonIcon}
           error={`${!!bill && !people ? "Can't be zero" : ""}`}
