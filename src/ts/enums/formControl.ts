@@ -1,0 +1,16 @@
+export enum EFormControlType {
+  PASSWORD = "password",
+  CHECKBOX = "checkbox",
+  RADIO = "radio",
+  SEARCH = "search",
+  SWITCH = "switch",
+  EMAIL = "email",
+  FILE = "file",
+  TEXT = "text",
+  TEXTAREA = "textarea",
+  DATE = "date",
+  COLOR = "color",
+  HIDDEN = "hidden",
+  NUMBER = "number",
+  TEL = "tel",
+}

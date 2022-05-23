@@ -1,0 +1,20 @@
+.tip {
+  margin: 30px 0;
+  &-btn {
+    &__group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 20px;
+
+      &-input {
+        width: 25%;
+      }
+
+      &__item {
+        width: 32%;
+      }
+    }
+  }
+}

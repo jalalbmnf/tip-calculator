@@ -1,0 +1,39 @@
+.result {
+  height: 100%;
+  padding: 50px;
+  border-radius: 15px;
+  background-color: var(--dark-turquoise-color);
+
+  &-btn {
+    width: 100%;
+    margin-top: 120px;
+    background-color: var(--turquoise-color);
+  }
+
+  &-list {
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:last-of-type {
+        margin-top: 50px;
+      }
+
+      &-title {
+        &__label {
+          color: var(--white-color);
+        }
+        &__person {
+          color: var(--light-gray-color);
+        }
+      }
+
+      &-value {
+        font-size: 40px;
+        font-weight: bolder;
+        color: var(--light-turquoise-color);
+      }
+    }
+  }
+}
